@@ -1,0 +1,31 @@
+<mat-toolbar color="warn">
+  <button
+      class="home-button"
+      home-button
+
+      mat-icon-button class="example-icon"
+      aria-label="Example icon-button with menu icon">
+  <mat-icon class="mr20">home</mat-icon>
+</button>
+  <span class="defect"> Defect Tracking App</span>
+  <span class="space"></span>
+  <div class="align-self-center">
+    <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" mat-raised-button routerLink = "dashBoard">DashBoard</a>
+      <a  *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" mat-raised-button routerLink = "createDefect"  class="mr10 ml20">Create Defect</a>
+
+      <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" mat-raised-button routerLink = "listDefect" class="mr10 ml20">List Defect</a>
+      <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()"  mat-raised-button (click)="logout()" class="mr10 ml20">Logout</a>
+      <a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()"  mat-raised-button (click)="login()" class="mr10 ml20">Login</a>
+  </div>
+
+</mat-toolbar>
+
+
+<!-- <div>
+  <mat-toolbar color="primary">
+      <span class="defect"> Defect Trackin App </span>
+      <span class = "space"></span>
+      <a routerLink="createDefect" mat-raised-button color="neutral" class="mr-4"> createDefect </a>
+      <a routerLink="listDefect" mat-raised-button color="neutral" class="mr-4"> listDefect </a>
+  </mat-toolbar>
+</div> -->

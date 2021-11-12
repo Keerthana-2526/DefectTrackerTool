@@ -1,0 +1,64 @@
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm">
+      <mat-card class="example-card mr10 ml20" layout="row" layout-align="center center">
+        <div style="display: block;">
+          <canvas baseChart width="400" height="400"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins">
+          </canvas>
+        </div>
+        </mat-card>
+    </div>
+    <div class="col-sm ">
+
+<mat-card class="example-card mr10 ml20" layout="row" layout-align="center center">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+    <ng-container matColumnDef="Si">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.Si}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="defectName">
+      <th mat-header-cell *matHeaderCellDef> defectName </th>
+      <td mat-cell *matCellDef="let element"> {{element.defectName}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="createdby">
+      <th mat-header-cell *matHeaderCellDef> createdby </th>
+      <td mat-cell *matCellDef="let element"> {{element.createdby}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="createdDate">
+      <th mat-header-cell *matHeaderCellDef> createdDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </mat-card>
+
+
+
+    </div>
+
+  </div>
+</div>
